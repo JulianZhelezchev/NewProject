@@ -39,7 +39,9 @@ namespace StoreWebSystem.Migrations
             modelBuilder.Entity("StoreWebSystem.Data.Models.ProductsInfo", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("BuyPrice")
                         .HasColumnType("decimal(8, 2)");

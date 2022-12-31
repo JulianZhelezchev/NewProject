@@ -35,7 +35,7 @@ namespace StoreWebSystem.Data.Models
 
             modelBuilder.Entity<ProductsInfo>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id);
 
                 entity.Property(e => e.BuyPrice).HasColumnType("decimal(8, 2)");
 

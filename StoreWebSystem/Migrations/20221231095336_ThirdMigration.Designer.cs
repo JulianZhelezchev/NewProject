@@ -10,8 +10,8 @@ using StoreWebSystem.Data.Models;
 namespace StoreWebSystem.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20221231092628_NewMigration")]
-    partial class NewMigration
+    [Migration("20221231095336_ThirdMigration")]
+    partial class ThirdMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,7 +41,9 @@ namespace StoreWebSystem.Migrations
             modelBuilder.Entity("StoreWebSystem.Data.Models.ProductsInfo", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("BuyPrice")
                         .HasColumnType("decimal(8, 2)");
